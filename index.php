@@ -19,10 +19,10 @@
 ** along with Southparkfan's cms.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-if (file_exists('config.php') {
+if (file_exists('config.php')) {
 	require 'config.php';
 } else {
-	die 'The file config.php does not exist. See the config.sample.php file for an example of config.php.';
+	die("The file config.php does not exist. See the config.sample.php file for an example of config.php.");
 }
 $DBconnection = mysql_connect('$DBserver', '$DBuser', '$DBpassword') or die('Connection failed: mysql_error()');
 
