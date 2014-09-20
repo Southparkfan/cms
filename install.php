@@ -22,13 +22,13 @@
 if (file_exists('config.php')) {
 	require 'config.php';
 } else {
-	die("The file config.php does not exist. See the config.sample.php file for an example of config.php.");
+	die('The file config.php does not exist. See the config.sample.php file for an example of config.php.\n');
 }
 
-echo 'Initializing connection to '.$DBname.'@'.$DBserver.' with user '.$DBuser.'.'; 
+echo 'Initializing connection to '.$DBname.'@'.$DBserver.' with user '.$DBuser.'.\n'; 
 
-$DBconnection = mysql_connect('$DBserver', '$DBuser', '$DBpassword') or die('Connection failed: mysql_error()');
+$DBconnection = mysql_connect('$DBserver', '$DBuser', '$DBpassword') or die('Connection failed: mysql_error()\n');
 
-mysql_select_db('$DBname', $DBconnection) or die(mysql_error());
+mysql_select_db('$DBname', $DBconnection) or die('mysql_error()\n');
 
-echo 'SQL tables should be inserted here.';
+echo 'SQL tables should be inserted here.\n';
