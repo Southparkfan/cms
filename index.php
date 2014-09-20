@@ -22,10 +22,10 @@
 if (file_exists('config.php')) {
 	require 'config.php';
 } else {
-	die("The file config.php does not exist. See the config.sample.php file for an example of config.php.");
+	die('The file config.php does not exist. See the config.sample.php file for an example of config.php.\n');
 }
-$DBconnection = mysql_connect('$DBserver', '$DBuser', '$DBpassword') or die('Connection failed: mysql_error()');
+$DBconnection = mysql_connect('$DBserver', '$DBuser', '$DBpassword') or die('Connection failed: mysql_error()\n');
 
 mysql_select_db('$DBname', $DBconnection) or die(mysql_error());
 
-echo 'Show articles here.';
+echo 'Show articles here.\n';
