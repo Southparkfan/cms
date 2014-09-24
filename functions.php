@@ -29,3 +29,7 @@ function mysqlConnect() {
 	$DBconnection = mysql_connect($DBserver, $DBuser, $DBpassword) or die('An error occured when trying to connect to the database server: mysql_error()\n');
 	mysql_select_db($DBname, $DBconnection) or die('mysql_error()\n');
 }
+
+function mysqlQuery($mysql_query) {
+	mysql_query($mysql_query, $DBconnection) or die('mysql_error()\n');
+}
