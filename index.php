@@ -19,13 +19,8 @@
 ** along with Southparkfan's cms.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-if (file_exists('config.php')) {
-	require 'config.php';
-} else {
-	die('The file config.php does not exist. See the config.sample.php file for an example of config.php.\n');
-}
-$DBconnection = mysql_connect('$DBserver', '$DBuser', '$DBpassword') or die('Connection failed: mysql_error()\n');
+require 'functions.php';
 
-mysql_select_db('$DBname', $DBconnection) or die(mysql_error());
+mysqlConnect();
 
 echo 'Show articles here.\n';
