@@ -29,7 +29,7 @@ mysqlQuery($mysql_query);
 if (mysql_num_rows($mysql_query) == 1) {
 	echo 'Successfully logged in! Do some session stuff here.';
 } else {
-	echo "<div style="background-color:#cc0000";>\n"
+	echo "<div style=\"background-color:#cc0000\";>\n"
 	echo "Username or password invalid!\n"
 	echo "</div>"
 }
