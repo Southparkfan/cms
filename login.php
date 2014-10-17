@@ -25,7 +25,7 @@ mysqlConnect();
 $username = isset($_POST['username']) ? mysql_real_escape_string($_POST['username']) : '';
 $password = isset($_POST['password']) ? mysql_real_escape_string($_POST['password']) : '';
 $mysql_query = "SELECT * FROM user WHERE user_username = '$password' AND user_password = '$password';";
-mysqlQuery($mysql_query);
+$mysql_query = mysqlQuery($mysql_query);
 if (mysql_num_rows($mysql_query) == 1) {
 	echo 'Successfully logged in! Do some session stuff here.';
 } else {
