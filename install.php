@@ -22,8 +22,8 @@
 
 require 'functions.php';
 
-echo 'Initializing connection to '.$DBname.'@'.$DBserver.' with user '.$DBuser.'.\n'; 
+echo 'Initializing connection to ' . $DBname . '@' . $DBserver . ' with user ' . $DBuser . ".\n"; 
 
 mysqlConnect();
 
-echo 'SQL tables should be inserted here.\n';
+echo 'SQL tables should be inserted here.'"\n";
