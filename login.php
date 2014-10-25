@@ -1,6 +1,19 @@
 <?php
 require 'functions.php';
 mysqlConnect();
+if (isset($_POST['poster'])) {
+$username = isset($_POST['username']) ? mysql_real_escape_string($_POST['username']) : '';
+$password = isset($_POST['password']) ? mysql_real_escape_string($_POST['password']) : '';
+$mysql_query = 'SELECT * FROM user WHERE user_username = ' . $username . ' AND user_password = ' . $password . ';';
+$mysql_query = mysqlQuery($mysql_query);
+if (mysql_num_rows($mysql_query) == 1) {
+	echo 'Successfully logged in! Do some session stuff here.';
+} else {
+	echo "<div style=\"background-color:#cc0000\";>\n";
+	echo "Username or password invalid!\n";
+	echo "</div>";
+}
+}
 ?>
 <html>
 <head>
@@ -17,19 +30,7 @@ mysqlConnect();
 		<td><input type="password" id="password" name="password" /></td>
 	</tr>
 	<tr>
-		<td><input type="submit" name="action" /></td>
+		<td><input type="submit" name="poster" /></td>
 	</tr>
 </table>
 </form>
-<?php
-$username = isset($_POST['username']) ? mysql_real_escape_string($_POST['username']) : '';
-$password = isset($_POST['password']) ? mysql_real_escape_string($_POST['password']) : '';
-$mysql_query = 'SELECT * FROM user WHERE user_username = ' . $username . ' AND user_password = ' . $password . ';';
-$mysql_query = mysqlQuery($mysql_query);
-if (mysql_num_rows($mysql_query) == 1) {
-	echo 'Successfully logged in! Do some session stuff here.';
-} else {
-	echo "<div style=\"background-color:#cc0000\";>\n";
-	echo "Username or password invalid!\n";
-	echo "</div>";
-}
