@@ -21,7 +21,7 @@ class db {
   
   public function query($query) {
     global $DBconnection;
-    $this->query = mysql_query($query, $DBconnection);
+    $this->query = mysql_query($query, $DBconnection) or die(mysql_error());
   }
   
 }
