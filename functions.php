@@ -22,23 +22,8 @@
 if (file_exists('config.php')) {
 	require 'config.php';
 } else {
-	die('The file config.php does not exist. See the config.sample.php file for an example of config.php.\n');
+	die('The file config.php does not exist. See the config.sample.php file for an example of config.php.');
 }
 
-function mysqlConnect() {
-	global $DBserver;
-	global $DBname;
-	global $DBuser;
-	global $DBpassword;
-	$DBconnection = mysql_connect($DBserver, $DBuser, $DBpassword) or die(mysql_error());
-	mysql_select_db($DBname, $DBconnection) or die(mysql_error());
-}
-
-function mysqlQuery($mysql_query) {
-	global $DBserver;
-	global $DBname;
-	global $DBuser;
-	global $DBpassword;
-	global $DBConnection;
-	mysql_query($mysql_query, $DBconnection) or die(mysql_error());
-}
+require_once 'inc/DatabaseMySQL.php';
+$db = new Database( $DBserver, $DBuser, $DBuser, $DBname );
