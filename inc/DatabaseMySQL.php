@@ -1,5 +1,5 @@
 <?php
-class db {
+class Database {
 
   private $DBserver;
   private $DBuser;
@@ -11,10 +11,10 @@ class db {
     $this->DBserver = $DBserver;
     $this->DBuser = $DBuser;
     $this->DBpassword = $DBpassword;
-    $this->$DBname = $DBname;
+    $this->DBname = $DBname;
   }
   
-  public function connect($this->DBserver, $this->DBuser, $this->DBpassword, $this->DBname) {
+  public function connect($DBserver, $DBuser, DBpassword, $DBname) {
     $DBconnection = mysql_connect($this->DBserver, $this->DBuser, $this->DBpassword) or die(mysql_error());
     mysql_select_db($this->DBname, $DBconnection) or die(mysql_error());
   }
