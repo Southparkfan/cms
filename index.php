@@ -20,7 +20,4 @@
 
 */
 require 'functions.php';
-
-mysqlConnect();
-
 echo 'Show articles here.\n';
