@@ -29,7 +29,10 @@ if (isset($_POST['poster'])) {
 		$db->query("SELECT * FROM user WHERE user_username = '$username' AND user_password = '$password'");
 
 if (mysqli_num_rows($db->query) == 1) {
-	echo 'Successfully logged in! Do some session stuff here.';
+	echo 'Successfully logged in!';
+	$dbrow = mysqli_fetch_assoc($db->query);
+	$_SESSION['userid'] = $row['user_id'];
+	$_SESSION['username'] = $row['user_name'];
 } else {
 	echo "<div style=\"background-color:#cc0000\";>\n";
 	echo "Username or password invalid!\n";
