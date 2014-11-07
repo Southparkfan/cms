@@ -1,9 +1,33 @@
 <?php
+/*
+** Login page.
+** Since: 09/2014
+
+** This file is part of Southparkfan's cms.
+
+** Southparkfan's cms is free software: you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or
+** (at your option) any later version.
+
+** Southparkfan's cms is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+
+** You should have received a copy of the GNU General Public License
+** along with Southparkfan's cms.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
 require 'functions.php';
+include 'header.php';
+
 if (isset($_POST['poster'])) {
-$username = isset($_POST['username']) ? mysql_real_escape_string($_POST['username']) : '';
-$password = isset($_POST['password']) ? mysql_real_escape_string($_POST['password']) : '';
-$db->query('SELECT * FROM user WHERE user_username = ' . $username . ' AND user_password = ' . $password . ';');
+		$username = isset($_POST['username']) ? mysql_real_escape_string($_POST['username']) : '';
+		$password = isset($_POST['password']) ? mysql_real_escape_string($_POST['password']) : '';
+		$db->query("SELECT * FROM user WHERE user_username = '$username' AND user_password = '$password'");
+
 if (mysqli_num_rows($db->query) == 1) {
 	echo 'Successfully logged in! Do some session stuff here.';
 } else {
@@ -13,10 +37,6 @@ if (mysqli_num_rows($db->query) == 1) {
 }
 }
 ?>
-<html>
-<head>
-</head>
-<body>
 <h1>Log in</h1>
 <form method="post">
 <table>

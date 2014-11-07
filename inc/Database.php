@@ -1,7 +1,7 @@
 <?php
 /*
-** Index page of Southparkfan's cms. If you view this in your browser, PHP is perhaps not installed or configured to work with Southparkfan's cms.
-** Since: 09/2014
+** Database switcher to include the appropriate settings for the database functions.
+** Since: 11/2014
 
 ** This file is part of Southparkfan's cms.
 
@@ -20,6 +20,13 @@
 
 */
 
-require 'functions.php';
+switch ($DBtype) {
 
-echo 'Show articles here.\n';
+	case 'default':
+		die('$DBtype isn\'t set to an existing database type.');
+		break;
+
+	case 'mysql':
+		require 'DatabaseMySQL.php';
+		break;
+}

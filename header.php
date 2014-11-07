@@ -1,7 +1,7 @@
 <?php
 /*
-** Index page of Southparkfan's cms. If you view this in your browser, PHP is perhaps not installed or configured to work with Southparkfan's cms.
-** Since: 09/2014
+** Global header.
+** Since: 11/2014
 
 ** This file is part of Southparkfan's cms.
 
@@ -19,7 +19,8 @@
 ** along with Southparkfan's cms.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-
-require 'functions.php';
-
-echo 'Show articles here.\n';
+?>
+<html>
+<head>
+</head>
+<body>

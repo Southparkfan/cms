@@ -20,8 +20,10 @@
 
 */
 
-// Database settings
-$DBserver = "";
-$DBname = "";
-$DBuser = "";
-$DBpassword = "";
+# Database settings
+
+$DBtype = '';
+$DBserver = '';
+$DBname = '';
+$DBuser = '';
+$DBpassword = '';
