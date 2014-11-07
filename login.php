@@ -24,8 +24,8 @@ require 'functions.php';
 include 'header.php';
 
 if (isset($_POST['poster'])) {
-		$username = isset($_POST['username']) ? mysql_real_escape_string($_POST['username']) : '';
-		$password = isset($_POST['password']) ? mysql_real_escape_string($_POST['password']) : '';
+		$username = isset($_POST['username']) ? mysqli_real_escape_string($db->DBConnection, $_POST['username']) : '';
+		$password = isset($_POST['password']) ? mysqli_real_escape_string($db->DBConnection, $_POST['password']) : '';
 		$db->query("SELECT * FROM user WHERE user_username = '$username' AND user_password = '$password'");
 
 if (mysqli_num_rows($db->query) == 1) {
