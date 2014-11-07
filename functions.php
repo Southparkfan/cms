@@ -25,5 +25,5 @@ if (file_exists('config.php')) {
 	die('The file config.php does not exist. See the config.sample.php file for an example of config.php.');
 }
 
-require_once 'inc/DatabaseMySQL.php';
+require_once 'inc/Database.php';
 $db = new Database( $DBserver, $DBuser, $DBuser, $DBname );
