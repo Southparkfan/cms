@@ -22,7 +22,7 @@
 
 require 'functions.php';
 
-echo 'Initializing connection to '.$DBname.'@'.$DBserver.' with user '.$DBuser.'.\n'; 
+echo "Initializing connection to '$DBname'@'$DBserver' with user '$DBuser'.\n"; 
 
 mysqlConnect();
 
