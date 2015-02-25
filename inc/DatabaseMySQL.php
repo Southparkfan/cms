@@ -36,7 +36,7 @@ class Database {
 	    $this->connect($this->DBserver, $this->DBuser, $this->DBpassword, $this->DBname);
 	}
   
-	function connect($DBserver, $DBuser, $DBpassword, $DBname) {
+	function connect() {
     		$this->DBconnection = mysqli_connect($this->DBserver, $this->DBuser, $this->DBpassword, $this->DBname) or die(mysqli_error($this->DBconnection));
 	}
   
