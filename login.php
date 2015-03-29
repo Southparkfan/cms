@@ -26,11 +26,11 @@ include 'header.php';
 if (isset($_POST['poster'])) {
 		$username = isset($_POST['username']) ? mysqli_real_escape_string($db->DBconnection, $_POST['username']) : '';
 		$password = isset($_POST['password']) ? mysqli_real_escape_string($db->DBconnection, $_POST['password']) : '';
-		$db->query("SELECT * FROM user WHERE user_username = '$username' AND user_password = '$password'");
+		$res = $db->query("SELECT * FROM user WHERE user_username = '$username' AND user_password = '$password'");
 
-	if (mysqli_num_rows($db->query) == 1) {
+	if (mysqli_num_rows($res) == 1) {
 		echo 'Successfully logged in!';
-		$dbrow = mysqli_fetch_assoc($db->query);
+		$dbrow = mysqli_fetch_assoc($res);
 		$_SESSION['userid'] = $row['user_id'];
 		$_SESSION['username'] = $row['user_name'];
 	} else {
